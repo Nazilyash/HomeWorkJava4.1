@@ -22,4 +22,15 @@ public class Book extends Product {
                 "author='" + author + '\'' +
                 "} " + super.toString();
     }
+
+    @Override
+    public boolean matches(String search) {
+        if (super.matches(search)) {
+            return true;
+        }
+        if (author.contains(search)) {
+            return true;
+        }
+        return false;
+    }
 }
